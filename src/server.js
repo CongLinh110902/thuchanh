@@ -17,5 +17,5 @@ initWebRoute(app)
 let port = process.env.PORT || 6969
 app.listen(port, () => {
     //callback
-    console.log("Lần 2: Backend nodejs is running on port: " + port)
+    console.log("Backend nodejs is running on port: " + port)
 })

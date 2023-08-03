@@ -1,12 +1,11 @@
 //Là file mà Mỗi lần truy cập vào đường link của website thì sẽ chạy vào file này đầu tiên
 import express from 'express'
+import homeController from '../controllers/homeController'
 let router = express.Router()
 //tạo hàm 
 let initWebRoute = (app) => {
     //xây dựng route đầu tiên
-    router.get("/", (req, res) => {
-        return res.send('Hello world')
-    })
+    router.get("/", homeController.getHomePage)
     //hàm này trả về router
     return app.use("/", router)
 }
