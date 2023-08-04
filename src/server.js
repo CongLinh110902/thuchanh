@@ -2,6 +2,7 @@ import express from "express" // đã sử dụng import là dùng import hết,
 import bodyParser from "body-parser" //file này hỗ trợ lấy các tham số từ client gửi lên, ví dụ: query param user?id=7, muốn lấy 7
 import viewEngine from "./config/viewEngine"
 import initWebRoute from "./route/web"
+import connectDB from "./config/connectDB"
 //để chạy được dòng code : process.env.PORT
 import dotenv from "dotenv"
 dotenv.config()
@@ -13,7 +14,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 viewEngine(app)
 initWebRoute(app)
-
+connectDB()
 let port = process.env.PORT || 6969
 app.listen(port, () => {
     //callback
